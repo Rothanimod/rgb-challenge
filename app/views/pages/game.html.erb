@@ -1,5 +1,5 @@
   <div class="score">
-    SCORE: <span>0</span>
+    SCORE: <span>empanada</span>
   </div>
 
   <div class="question-container">
@@ -21,8 +21,12 @@
 
   <div class="result lost">
     <span>Hahahaha you lost like clown9</span>
+    <h1>Score: <span id="finalScore"></span></h1>
     <div class="close">
       <a href="#">Volver a jugar</a>
+    </div>
+    <div class="close">
+      <a href="#">Registra tu puntaje</a>
     </div>
   </div>
 
@@ -35,13 +39,14 @@ game();
 //listener for onclick of the option
 $('.option').on('click', guess);
 $('.close').on('click', function() {
+event.preventDefault();
 $('.result').hide();
 $('.option').removeClass('scale');
 game();
 });
 
 function game() {
-correct = Math.floor(Math.random() * 2);
+correct = Math.floor(Math.random() * 3);
 
 $('.option').each(function(index){
   var color = generateColor();
@@ -61,8 +66,9 @@ if (index == correct) {
   score++;
   $('.result.won').show();
 } else {
-  score = 0;
   $('.result.lost').show();
+  $('#finalScore').text(score);
+  score = 0;
 }
 $('.score span').text(score);
 };
