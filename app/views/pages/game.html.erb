@@ -1,5 +1,5 @@
   <div class="score">
-    SCORE: <span>empanada</span>
+    SCORE: <span>0</span>
   </div>
 
   <div class="question-container">
@@ -20,15 +20,20 @@
   </div>
 
   <div class="result lost">
-    <span>Hahahaha you lost like clown9</span>
-    <h1>Score: <span id="finalScore"></span></h1>
-    <div class="close">
-      <a href="#">Volver a jugar</a>
-    </div>
-    <div class="close">
-      <a href="#">Registra tu puntaje</a>
-    </div>
+  <span>NOOOOOOOOO :( :(</span>
+  <h1>Score: <span id="finalScore"></span></h1>
+
+  <div class="score-form">
+    <form action="">
+      <input type="email" name="email" class="email-input" placeholder="Correo electrónico">
+    </form>
+    <a href="#" id="registerScore">Registrar puntaje</a>
   </div>
+
+  <div class="close">
+    <a href="#">Volver a jugar</a>
+  </div>
+</div>
 
 <script>
 //declared here for scope purposes.
@@ -42,6 +47,7 @@ $('.close').on('click', function() {
 event.preventDefault();
 $('.result').hide();
 $('.option').removeClass('scale');
+$('.input-email').val('');
 game();
 });
 
