@@ -25,3 +25,55 @@
       <a href="#">Volver a jugar</a>
     </div>
   </div>
+
+<script>
+//declared here for scope purposes.
+var correct;
+var score = 0;
+//initialize a new game
+game();
+//listener for onclick of the option
+$('.option').on('click', guess);
+$('.close').on('click', function() {
+$('.result').hide();
+$('.option').removeClass('scale');
+game();
+});
+
+function game() {
+correct = Math.floor(Math.random() * 2);
+
+$('.option').each(function(index){
+  var color = generateColor();
+  $(this).css('background-color', color);
+
+  if (index == correct) {
+    $('.question').text(color);
+  }
+});
+}
+
+function guess() {
+$(this).addClass('scale');
+var index = $('.option').index(this);
+
+if (index == correct) {
+  score++;
+  $('.result.won').show();
+} else {
+  score = 0;
+  $('.result.lost').show();
+}
+$('.score span').text(score);
+};
+
+//returns a number between 0 and 255
+function random(){
+return Math.floor(Math.random() * 255);
+};
+
+//returns a color like this rgb(136, 45, 67)
+function generateColor(){
+return 'rgb('+ random() + ', '+ random() +', '+ random() + ')';
+};
+</script>
