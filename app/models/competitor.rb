@@ -10,4 +10,5 @@
 #
 
 class Competitor < ApplicationRecord
+    validates :email, :score, presence: true
 end
