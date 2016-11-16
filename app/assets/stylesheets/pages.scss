@@ -45,6 +45,10 @@ body {
   width: 100%;
 }
 
+table {
+  margin: auto;
+}
+
 .result span {
   font-size: 42px;
   font-weight: bold;
@@ -54,7 +58,7 @@ body {
   margin-top: 70px;
 }
 
-.result .close a, #registerScore {
+.result .close a, #registerScore, .play-again {
   color: white;
   font-family: 'Inconsolata';
   font-size: 21px;
@@ -62,6 +66,10 @@ body {
   border: 5px solid white;
   padding: 10px 15px;
   border-radius: 5px;
+}
+
+#playAgainContainer, table#positions{
+  margin-top: 100px;
 }
 
 #registerScore {
